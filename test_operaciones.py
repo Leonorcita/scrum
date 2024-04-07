@@ -1,5 +1,5 @@
 import unittest
-from operaciones import sumar,restar
+from operaciones import sumar,restar,multiplicar
 
 class TestOperaciones(unittest.TestCase):
     def test_sumar(self):
@@ -11,6 +11,11 @@ class TestOperaciones(unittest.TestCase):
         self.assertEqual(restar(3, 2), 1)
         self.assertEqual(restar(-1, 1), -2)
         self.assertEqual(restar(-1, -1), 0)
+        
+    def test_multiplicar(self):
+        self.assertEqual(multiplicar(3, 2), 6)
+        self.assertEqual(multiplicar(-1, 1), -1)
+        self.assertEqual(multiplicar(-1, -1), 1)
 
 if __name__ == '__main__':
     unittest.main()
