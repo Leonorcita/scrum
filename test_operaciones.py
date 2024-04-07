@@ -1,5 +1,5 @@
 import unittest
-from operaciones import sumar,restar,multiplicar
+from operaciones import sumar, restar, multiplicar, dividir
 
 class TestOperaciones(unittest.TestCase):
     def test_sumar(self):
@@ -16,6 +16,14 @@ class TestOperaciones(unittest.TestCase):
         self.assertEqual(multiplicar(3, 2), 6)
         self.assertEqual(multiplicar(-1, 1), -1)
         self.assertEqual(multiplicar(-1, -1), 1)
+
+    def test_dividir(self):
+        self.assertEqual(dividir(6, 3), 2)
+        self.assertEqual(dividir(-6, 3), -2)
+        self.assertEqual(dividir(6, -3), -2)
+        self.assertEqual(dividir(-6, -3), 2)
+        with self.assertRaises(ValueError):
+            dividir(6, 0)
 
 if __name__ == '__main__':
     unittest.main()
